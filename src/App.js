@@ -8,8 +8,8 @@ import SingInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       currentUser: null
@@ -46,9 +46,19 @@ class App extends React.Component {
       <div>
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/signin' component={SingInAndSignUpPage} />
+          <Route 
+            exact 
+            path='/' 
+            component={HomePage} 
+          />
+          <Route 
+            path='/shop' 
+            component={ShopPage} 
+          />
+          <Route 
+            path='/signin' 
+            component={SingInAndSignUpPage} 
+          />
         </Switch>
       </div>
     )
