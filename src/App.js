@@ -3,19 +3,15 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
 import { createStructuredSelector } from 'reselect';
-
-// Import components
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component.jsx';
 import Header from './components/header/header.component';
 import SingInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
-
-// Import firebase utilities
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { useEffect } from 'react';
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
