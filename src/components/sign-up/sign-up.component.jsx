@@ -4,14 +4,13 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
-const SignUp = ({}) => {
+const SignUp = () => {
     const [userCredentials, setUserCredentials] = useState({
         displayName: '',
         email: '',
         password: '',
         confirmPassword: ''
     })
-
     const { displayName, email, password, confirmPassword } = userCredentials
 
     const handleSubmit = async event => {
